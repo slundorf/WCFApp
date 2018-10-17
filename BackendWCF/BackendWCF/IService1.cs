@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -21,28 +22,25 @@ namespace BackendWCF
 
         // Vores metoder som skal kunne kaldes fra en client
         [OperationContract]
-        bool CreateEvent();
+        void CreateEvent(String navn, String beskrivelse, String tidspunkt, String sted);
 
         [OperationContract]
-        bool UpdateEvent();
+        void UpdateEvent(Event e);
 
         [OperationContract]
-        bool DeleteEvent();
+        void DeleteEvent(int id);
 
         [OperationContract]
-        bool GetEvent();
+        Event GetEvent(int id);
 
         [OperationContract]
-        bool GetAllEvents();
+        ArrayList GetAllEvents();
 
         [OperationContract]
-        bool GetAllEventsList();
+        void SignupForEvent();
 
         [OperationContract]
-        bool SignupForEvent();
-
-        [OperationContract]
-        bool CancelForEvent();
+        void CancelForEvent();
 
     }
 

@@ -7,6 +7,7 @@ namespace BackendWCF
 {
     public class Event
     {
+        int id { get; set; }
         String navn { get; set; }
         String beskrivelse { get; set; }
         String tidspunkt { get; set; }

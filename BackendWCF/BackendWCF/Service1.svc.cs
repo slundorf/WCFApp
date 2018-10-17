@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -19,10 +20,27 @@ namespace BackendWCF
 
         public bool CreateEvent()
         {
+            // Husk at tjekke om et event allerede eksisterer (navn)
+            throw new NotImplementedException();
+        }
+
+        public bool CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted)
+        {
+            //generate et random unikt id
             throw new NotImplementedException();
         }
 
         public bool DeleteEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteEvent(Event e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteEvent(int id)
         {
             throw new NotImplementedException();
         }
@@ -60,12 +78,47 @@ namespace BackendWCF
             throw new NotImplementedException();
         }
 
+        public Event GetEvent(Event e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Event GetEvent(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool SignupForEvent()
         {
             throw new NotImplementedException();
         }
 
         public bool UpdateEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateEvent(Event e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IService1.CancelForEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IService1.CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted)
+        {
+            throw new NotImplementedException();
+        }
+
+        ArrayList IService1.GetAllEvents()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IService1.SignupForEvent()
         {
             throw new NotImplementedException();
         }
