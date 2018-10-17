@@ -30,8 +30,15 @@ namespace BackendWCF
 
         public void updateEvent(Event e)
         {
-            int index = events.IndexOf(e);
-            events[index] = e;
+            for (int i = 0; i >= events.Count; i++)
+            {
+                Event dbe = (Event) events[i];
+                if (e.id == dbe.id)
+                {
+                    int index = events.IndexOf(dbe);
+                    events[index] = e;
+                }
+            }
         }
 
     }
