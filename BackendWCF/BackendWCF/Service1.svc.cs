@@ -12,6 +12,31 @@ namespace BackendWCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public bool CancelForEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool GetAllEvents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool GetAllEventsList()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -28,6 +53,21 @@ namespace BackendWCF
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public bool GetEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SignupForEvent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateEvent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

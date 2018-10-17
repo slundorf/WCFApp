@@ -19,7 +19,31 @@ namespace BackendWCF
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: Add your service operations here
+        // Vores metoder som skal kunne kaldes fra en client
+        [OperationContract]
+        bool CreateEvent();
+
+        [OperationContract]
+        bool UpdateEvent();
+
+        [OperationContract]
+        bool DeleteEvent();
+
+        [OperationContract]
+        bool GetEvent();
+
+        [OperationContract]
+        bool GetAllEvents();
+
+        [OperationContract]
+        bool GetAllEventsList();
+
+        [OperationContract]
+        bool SignupForEvent();
+
+        [OperationContract]
+        bool CancelForEvent();
+
     }
 
 
