@@ -37,6 +37,9 @@ namespace BackendWCF
         ArrayList GetAllEvents();
 
         [OperationContract]
+        String GetAllEventString();
+
+        [OperationContract]
         void SignupForEvent();
 
         [OperationContract]

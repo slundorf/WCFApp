@@ -13,7 +13,7 @@ namespace BackendWCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        TransientDatabase db = new TransientDatabase();
+        static TransientDatabase db = new TransientDatabase();
 
         public void CancelForEvent()
         {
@@ -37,6 +37,11 @@ namespace BackendWCF
         public ArrayList GetAllEvents()
         {
             throw new NotImplementedException();
+        }
+
+        public String GetAllEventString()
+        {
+            return db.getAll();
         }
 
         public string GetData(int value)

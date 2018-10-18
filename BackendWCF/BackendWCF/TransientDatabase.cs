@@ -42,6 +42,16 @@ namespace BackendWCF
                 }
             }
         }
+        public String getAll()
+        {
+            String result = "";
+            Event[] eventarray = events.ToArray(typeof(Event)) as Event[];
+            foreach (Event e in eventarray)
+            {
+                result += e.toString();
+            }
+            return result;
+        }
 
         public int getNewEventId()
         {
