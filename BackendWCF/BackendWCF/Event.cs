@@ -24,6 +24,6 @@ namespace BackendWCF
             Sted = sted;
         }
 
-        public String toString() => "[" + Navn + "," + Beskrivelse + "," + Tidspunkt + "," + Sted + "]";
+        public String toString() => "[" + Id + "," + Navn + "," + Beskrivelse + "," + Tidspunkt + "," + Sted + "]";
     }
 }
