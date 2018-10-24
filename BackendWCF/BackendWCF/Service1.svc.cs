@@ -31,7 +31,7 @@ namespace BackendWCF
 
         public void DeleteEvent(int id)
         {
-            throw new NotImplementedException();
+            db.deleteEvent(db.getEvent(id));
         }
 
         public ArrayList GetAllEvents()
@@ -74,7 +74,7 @@ namespace BackendWCF
 
         public void UpdateEvent(Event e)
         {
-            throw new NotImplementedException();
+            db.updateEvent(e);
         }
 
     }
