@@ -41,7 +41,7 @@ namespace BackendWCF
 
         public String GetAllEventString()
         {
-            return db.getAll();
+            return db.getAllEventsString();
         }
 
         public string GetData(int value)

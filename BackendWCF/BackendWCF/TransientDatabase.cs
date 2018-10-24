@@ -42,7 +42,7 @@ namespace BackendWCF
                 }
             }
         }
-        public String getAll()
+        public String getAllEventsString()
         {
             String result = "";
             Event[] eventarray = events.ToArray(typeof(Event)) as Event[];
@@ -51,6 +51,11 @@ namespace BackendWCF
                 result += e.toString();
             }
             return result;
+        }
+
+        public ArrayList getAllEvents()
+        {
+            return events;
         }
 
         public int getNewEventId()
