@@ -36,7 +36,7 @@ namespace BackendWCF
 
         public ArrayList GetAllEvents()
         {
-            throw new NotImplementedException();
+            return db.getAllEvents();
         }
 
         public String GetAllEventString()
@@ -64,7 +64,7 @@ namespace BackendWCF
 
         public Event GetEvent(int id)
         {
-            throw new NotImplementedException();
+            return db.getEvent(id);
         }
 
         public void SignupForEvent()
