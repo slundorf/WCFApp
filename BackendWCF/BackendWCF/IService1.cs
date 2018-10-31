@@ -34,7 +34,7 @@ namespace BackendWCF
         Event GetEvent(int id);
 
         [OperationContract]
-        ArrayList GetAllEvents();
+        List<Event> GetAllEvents();
 
         [OperationContract]
         String GetAllEventString();
