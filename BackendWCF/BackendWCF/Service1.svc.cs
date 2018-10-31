@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,29 +13,35 @@ namespace BackendWCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public bool CancelForEvent()
+        static TransientDatabase db = new TransientDatabase();
+
+        public void CancelForEvent()
         {
+            //Afmelder en bruger fra et event
             throw new NotImplementedException();
         }
 
-        public bool CreateEvent()
+        public void CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted)
         {
-            throw new NotImplementedException();
+            //generate et random unikt id
+            int id = db.getNewEventId();
+            Event e = new Event(id, navn, beskrivelse, tidspunkt, sted);
+            db.addEvent(e);
         }
 
-        public bool DeleteEvent()
+        public void DeleteEvent(int id)
         {
-            throw new NotImplementedException();
+            db.deleteEvent(db.getEvent(id));
         }
 
-        public bool GetAllEvents()
+        public List<Event> GetAllEvents()
         {
-            throw new NotImplementedException();
+            return db.getAllEvents();
         }
 
-        public bool GetAllEventsList()
+        public String GetAllEventString()
         {
-            throw new NotImplementedException();
+            return db.getAllEventsString();
         }
 
         public string GetData(int value)
@@ -55,19 +62,20 @@ namespace BackendWCF
             return composite;
         }
 
-        public bool GetEvent()
+        public Event GetEvent(int id)
+        {
+            return db.getEvent(id);
+        }
+
+        public void SignupForEvent()
         {
             throw new NotImplementedException();
         }
 
-        public bool SignupForEvent()
+        public void UpdateEvent(Event e)
         {
-            throw new NotImplementedException();
+            db.updateEvent(e);
         }
 
-        public bool UpdateEvent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
