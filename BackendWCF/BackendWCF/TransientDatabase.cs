@@ -19,7 +19,7 @@ namespace BackendWCF
         public void deleteEvent(Event e) => events.Remove(e);
         public Event getEvent(int id)
         {
-            for(int i = 0; i >= events.Count; i++)
+            for(int i = 0; i <= events.Count; i++)
             {
                 Event e = (Event) events[i];
                 if(e.Id == id)

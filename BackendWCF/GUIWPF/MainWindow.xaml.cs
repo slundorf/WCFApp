@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BackendWCF;
+
 
 namespace GUIWPF
 {
@@ -23,6 +25,16 @@ namespace GUIWPF
         public MainWindow()
         {
             InitializeComponent();
+            List<Event> items = new List<Event>();
+            items.Add(new Event(1, "Event1", "Beskrivelse1", "12:23", "DTU"));
+            items.Add(new Event(2, "EventToast", "Beskrivelse blblal", "12:22", "DTU Compute"));
+            items.Add(new Event(3, "Event33333sdfsdfsdf", "Beskrivdfsdfselse1", "11:23", "Netto"));
+            listBox.ItemsSource = items;
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            textOutput.Text = "Hello";
         }
     }
 }
