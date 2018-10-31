@@ -34,7 +34,7 @@ namespace BackendWCF
             db.deleteEvent(db.getEvent(id));
         }
 
-        public ArrayList GetAllEvents()
+        public List<Event> GetAllEvents()
         {
             return db.getAllEvents();
         }
