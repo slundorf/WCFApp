@@ -176,7 +176,7 @@
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference1\Reference.svcmap">
+    <None Include="Service References\ServiceReference1\Reference.svcmap" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
