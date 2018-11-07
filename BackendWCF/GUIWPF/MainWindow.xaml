@@ -8,3 +8,21 @@
         Title="Mainmenu" Height="500" Width="350" Source="EventList.xaml">
 
 </NavigationWindow>
+    <Grid Margin="0,0,-6.667,-0.333">
+        <Button x:Name="btn1" Content="Button" Click="btn1_Click" HorizontalAlignment="Left" Margin="328,225,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="textOutput" HorizontalAlignment="Left" Margin="339,133,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="269" Margin="471,30,0,0" VerticalAlignment="Top" Width="295">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Id: " />
+                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="Event: " />
+                        <TextBlock Text="{Binding Navn}" FontWeight="Bold" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

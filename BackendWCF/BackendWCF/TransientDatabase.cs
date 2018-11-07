@@ -12,16 +12,17 @@ namespace BackendWCF
     public class TransientDatabase
     {
         //Arraylist med alt vores midlertidig data.
-        private ArrayList events = new ArrayList();
+        private List<Event> events = new List<Event>();
         int unikid = 0;
 
         public void addEvent(Event e) => events.Add(e);
         public void deleteEvent(Event e) => events.Remove(e);
+        public void deleteAllEvents() => events.Clear();
         public Event getEvent(int id)
         {
-            for(int i = 0; i >= events.Count; i++)
+            for(int i = 0; i < events.Count; i++)
             {
-                Event e = (Event) events[i];
+                Event e = events[i];
                 if(e.Id == id)
                 {
                     return e;
@@ -32,9 +33,9 @@ namespace BackendWCF
 
         public void updateEvent(Event e)
         {
-            for (int i = 0; i >= events.Count; i++)
+            for (int i = 0; i < events.Count; i++)
             {
-                Event dbe = (Event) events[i];
+                Event dbe = events[i];
                 if (e.Id == dbe.Id)
                 {
                     int index = events.IndexOf(dbe);
@@ -45,15 +46,15 @@ namespace BackendWCF
         public String getAllEventsString()
         {
             String result = "";
-            Event[] eventarray = events.ToArray(typeof(Event)) as Event[];
-            foreach (Event e in eventarray)
+       //     Event[] eventarray = events.ToArray(typeof(Event)) as Event[];
+            foreach (Event e in events)
             {
                 result += e.toString();
             }
             return result;
         }
 
-        public ArrayList getAllEvents()
+        public List<Event> getAllEvents()
         {
             return events;
         }
