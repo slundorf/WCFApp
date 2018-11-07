@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendWCF", "BackendWCF\BackendWCF.csproj", "{E6A620C4-2B84-4800-AFC6-3F3F81C7908C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendWCFTests1", "BackendWCFTests1\BackendWCFTests1.csproj", "{F2121DC6-E734-448E-8FEC-7A32AFB9CA74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIWPF", "GUIWPF\GUIWPF.csproj", "{FDD9697F-00D9-4E13-A571-DD6D2886570D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{E6A620C4-2B84-4800-AFC6-3F3F81C7908C} = {E6A620C4-2B84-4800-AFC6-3F3F81C7908C}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{5DD8B991-8F69-42B0-8B2A-CC087498B4FD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E6A620C4-2B84-4800-AFC6-3F3F81C7908C} = {E6A620C4-2B84-4800-AFC6-3F3F81C7908C}
 	EndProjectSection
