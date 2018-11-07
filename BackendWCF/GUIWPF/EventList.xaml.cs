@@ -21,9 +21,17 @@ namespace GUIWPF
     /// </summary>
     public partial class EventList : Page
     {
+        Service1Client client;
+        static List<Event> events;
+
         public EventList()
         {
             InitializeComponent();
+            client = new Service1Client();
+            events = new List<Event>();
+            peopleListBox.ItemsSource = events;
+            getData();
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -31,10 +39,14 @@ namespace GUIWPF
             AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
             this.NavigationService.Navigate(AddEvent);
         }
+
         private void getData()
         {
-            Service1Client client = new Service1Client();
-            client.GetAllEvents();
+            //TEST DATA
+            events.Add(new Event(1, "Event1", "Beskrivelse1", "12:23", "DTU"));
+            events.Add(new Event(2, "Event2", "Beskrivelse1", "12:23", "DTU"));
+
+
         }
 
 

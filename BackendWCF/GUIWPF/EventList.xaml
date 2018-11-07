@@ -9,31 +9,7 @@
       Title="EventList" Margin="10,0,10,10">
 
     <Grid>
-        <Grid.Resources>            <!-- Expense Report Data -->
-            <XmlDataProvider x:Key="ExpenseDataSource" XPath="Expenses">
-                <x:XData>
-                    <Expenses xmlns="">
-                        <Person Name="Mike" Department="Legal">
-                            <Expense ExpenseType="Lunch" ExpenseAmount="50" />
-                            <Expense ExpenseType="Transportation" ExpenseAmount="50" />
-                        </Person>
-                        <Person Name="Lisa" Department="Marketing">
-                            <Expense ExpenseType="Document printing"
-ExpenseAmount="50"/>
-                            <Expense ExpenseType="Gift" ExpenseAmount="125" />
-                        </Person>
-                        <Person Name="John" Department="Engineering">
-                            <Expense ExpenseType="Magazine subscription"
-ExpenseAmount="50"/>
-                            <Expense ExpenseType="New machine" ExpenseAmount="600" />
-                            <Expense ExpenseType="Software" ExpenseAmount="500" />
-                        </Person>
-                        <Person Name="Mary" Department="Finance">
-                            <Expense ExpenseType="Dinner" ExpenseAmount="100" />
-                        </Person>
-                    </Expenses>
-                </x:XData>
-            </XmlDataProvider>            <!-- Name item template -->
+        <Grid.Resources>            <!-- Name item template -->
             <DataTemplate x:Key="nameItemTemplate">
                 <Label Content="{Binding XPath=@Name}"/>
             </DataTemplate>        </Grid.Resources>
@@ -41,7 +17,7 @@ ExpenseAmount="50"/>
             <ImageBrush ImageSource="background.png" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="150.667" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -51,18 +27,27 @@ ExpenseAmount="50"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <!-- People list -->
-        <Label Grid.Column="0" Style="{StaticResource headerTextStyle}" Foreground="#FF020406" >
+        <Label Grid.Column="0" Style="{StaticResource headerTextStyle}" Foreground="#FF020406" Height="31" Margin="0,52,0.667,51.667" >
             Eventhandler
         </Label>
-        <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource listHeaderStyle}">
+        <Border Grid.Column="0" Style="{StaticResource listHeaderStyle}" Height="Auto" Margin="0,115,0.667,135" Grid.RowSpan="3">
             <Label Style="{StaticResource listHeaderTextStyle}">Events</Label>
         </Border>
-        <ListBox Name="peopleListBox" Grid.Column="0" Grid.Row="2"
-            ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
-               ItemTemplate="{StaticResource nameItemTemplate}">
+        <ListBox Name="peopleListBox" Grid.Column="0" Grid.Row="2" Margin="0,0.333,0.667,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Id: " />
+                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="Event: " />
+                        <TextBlock Text="{Binding Navn}" FontWeight="Bold" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <!-- View report button -->
-        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click" Style="{StaticResource
-buttonStyle}">View</Button>
+        <Button Grid.Column="0" Grid.Row="2" Click="Button_Click" Style="{StaticResource
+buttonStyle}" Height="Auto" Margin="0,120.333,0.667,0" Grid.RowSpan="2" Width="150">View</Button>
     </Grid>
 </Page>
