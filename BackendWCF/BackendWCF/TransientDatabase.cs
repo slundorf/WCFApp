@@ -8,7 +8,7 @@ namespace BackendWCF
 {
     //En simpel form for database, hvor data ikke er konsistent!
     //Ville i den rigtige verden skulle udskiftes med en SQL database.
-
+  
     public class TransientDatabase
     {
         //Arraylist med alt vores midlertidig data.
