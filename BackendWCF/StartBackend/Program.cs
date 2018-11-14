@@ -6,6 +6,7 @@ namespace StartBackend
 {
     class Program
     {
+        //NOTE: DETTE PROGRAM SKAL KØRES SOM ADMINISTRATOR
         static void Main(string[] args)
         {
             // Step 1 Create a URI to serve as the base address.
@@ -17,7 +18,7 @@ namespace StartBackend
             try
             {
                 // Step 3 Add a service endpoint.
-                selfHost.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "CalculatorService");
+                selfHost.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "Service1");
 
                 // Step 4 Enable metadata exchange.
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
@@ -26,7 +27,12 @@ namespace StartBackend
 
                 // Step 5 Start the service.
                 selfHost.Open();
-                Console.WriteLine("Web service er deployed.");
+                Console.WriteLine("-- WCF Backend til event management kører nu!! --");
+                Console.WriteLine("62413 - Advanceret objektorienteteret programmering med C# og .NET");
+                Console.WriteLine("Sofie, Simon og Christoffer - F18");
+                Console.WriteLine("");
+                Console.WriteLine("Web service er nu opstartet på url: " + baseAddress);
+                Console.WriteLine("");
                 Console.WriteLine("Tryk <ENTER> for at terminere web service.");
                 Console.WriteLine();
                 Console.ReadLine();
