@@ -15,6 +15,17 @@ namespace BackendWCF
         private List<Event> events = new List<Event>();
         int unikid = 0;
 
+        public TransientDatabase()
+        {
+            //Test data
+            addEvent(new Event(getNewEventId(), "Fodboldsturnering", "Vi mødes nede på boldbanerne og spiller.", "Kl. 14.00", "Boldbanerne i 2. kvadrant"));
+            addEvent(new Event(getNewEventId(), "Barcrawl", "Ingen beskrivelse", "Kl. 12.00", "Barene på DTU"));
+            addEvent(new Event(getNewEventId(), "Paintball", "Vi mødes inde i byen og spiller.", "Kl. 17.00", "København"));
+            addEvent(new Event(getNewEventId(), "Bordfodboldsturnering", "Ingen beskrivelse", "Kl. 11.00", "S-huset i Lyngby"));
+            addEvent(new Event(getNewEventId(), "Ølsmagning", "Jaaaaa øller", "Kl. 19.00", "København"));
+            addEvent(new Event(getNewEventId(), "Kursus i C# .NET", "Ingen beskrivelse", "Kl. 13.00", "DTU Ballerup"));
+        }
+
         public void addEvent(Event e) => events.Add(e);
         public void deleteEvent(Event e) => events.Remove(e);
         public void deleteAllEvents() => events.Clear();
