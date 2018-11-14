@@ -13,10 +13,10 @@
             <DataTemplate x:Key="nameItemTemplate">
                 <WrapPanel>
                     <TextBlock Text="Id: " />
-                    <TextBlock Text="{Binding}" FontWeight="Bold" />
+                    <TextBlock Text="{Binding Idk__BackingField}" FontWeight="Bold" />
                     <TextBlock Text=", " />
                     <TextBlock Text="Event: " />
-                    <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                    <TextBlock Text="{Binding Navnk__BackingField}" FontWeight="Bold" />
                 </WrapPanel>
             </DataTemplate>        </Grid.Resources>
         <Grid.Background>
@@ -39,7 +39,7 @@
         <Border Grid.Column="0" Style="{StaticResource listHeaderStyle}" Height="Auto" Margin="0,115,0.667,135" Grid.RowSpan="3">
             <Label Style="{StaticResource listHeaderTextStyle}">Events</Label>
         </Border>
-        <ListBox Name="peopleListBox" ItemsSource="{Binding Events}" ItemTemplate="{StaticResource nameItemTemplate}" Grid.Column="0" Grid.Row="2" Margin="0,0.333,0.667,0">
+        <ListBox Name="peopleListBox" ItemTemplate="{StaticResource nameItemTemplate}" Grid.Column="0" Grid.Row="2" Margin="0,0.333,0.667,0">
 
         </ListBox>
         <!-- View report button -->

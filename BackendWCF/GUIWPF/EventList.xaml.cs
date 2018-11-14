@@ -31,7 +31,6 @@ namespace GUIWPF
             client = new Service1Client();
             
             events = new List<ServiceReference1.Event>(); //lokal liste
-            client.CreateEvent("Hej", "test", "1234", "et sted");
             events = client.GetAllEvents();
             peopleListBox.ItemsSource = events;
             getData();
