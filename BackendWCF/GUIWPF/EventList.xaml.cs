@@ -22,13 +22,17 @@ namespace GUIWPF
     public partial class EventList : Page
     {
         Service1Client client;
-        static List<Event> events;
+        static List<ServiceReference1.Event> events;
+        
 
         public EventList()
         {
             InitializeComponent();
             client = new Service1Client();
-            events = new List<Event>();
+            
+            events = new List<ServiceReference1.Event>(); //lokal liste
+            client.CreateEvent("Hej", "test", "1234", "et sted");
+            events = client.GetAllEvents();
             peopleListBox.ItemsSource = events;
             getData();
 
@@ -43,12 +47,9 @@ namespace GUIWPF
         private void getData()
         {
             //TEST DATA
-            events.Add(new Event(1, "Event1", "Beskrivelse1", "12:23", "DTU"));
-            events.Add(new Event(2, "Event2", "Beskrivelse1", "12:23", "DTU"));
-
+            //events.Add(new Event(1, "Event1", "Beskrivelse1", "12:23", "DTU"));
+            //events.Add(new Event(2, "Event2", "Beskrivelse1", "12:23", "DTU"));
 
         }
-
-
     }
 }

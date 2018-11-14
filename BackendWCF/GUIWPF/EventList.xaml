@@ -11,19 +11,25 @@
     <Grid>
         <Grid.Resources>            <!-- Name item template -->
             <DataTemplate x:Key="nameItemTemplate">
-                <Label Content="{Binding XPath=@Name}"/>
+                <WrapPanel>
+                    <TextBlock Text="Id: " />
+                    <TextBlock Text="{Binding}" FontWeight="Bold" />
+                    <TextBlock Text=", " />
+                    <TextBlock Text="Event: " />
+                    <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                </WrapPanel>
             </DataTemplate>        </Grid.Resources>
         <Grid.Background>
             <ImageBrush ImageSource="background.png" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150.667" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="151*" />
+            <ColumnDefinition Width="149*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition />
+            <RowDefinition Height="150" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <!-- People list -->
@@ -33,18 +39,8 @@
         <Border Grid.Column="0" Style="{StaticResource listHeaderStyle}" Height="Auto" Margin="0,115,0.667,135" Grid.RowSpan="3">
             <Label Style="{StaticResource listHeaderTextStyle}">Events</Label>
         </Border>
-        <ListBox Name="peopleListBox" Grid.Column="0" Grid.Row="2" Margin="0,0.333,0.667,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Id: " />
-                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
-                        <TextBlock Text=", " />
-                        <TextBlock Text="Event: " />
-                        <TextBlock Text="{Binding Navn}" FontWeight="Bold" />
-                    </WrapPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+        <ListBox Name="peopleListBox" ItemsSource="{Binding Events}" ItemTemplate="{StaticResource nameItemTemplate}" Grid.Column="0" Grid.Row="2" Margin="0,0.333,0.667,0">
+
         </ListBox>
         <!-- View report button -->
         <Button Grid.Column="0" Grid.Row="2" Click="Button_Click" Style="{StaticResource
