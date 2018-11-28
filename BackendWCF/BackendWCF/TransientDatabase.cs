@@ -23,7 +23,7 @@ namespace BackendWCF
             addEvent(new Event(getNewEventId(), "Paintball", "Vi mødes inde i byen og spiller.", "Kl. 17.00", "København"));
             addEvent(new Event(getNewEventId(), "Bordfodboldsturnering", "Ingen beskrivelse", "Kl. 11.00", "S-huset i Lyngby"));
             addEvent(new Event(getNewEventId(), "Ølsmagning", "Jaaaaa øller", "Kl. 19.00", "København"));
-            addEvent(new Event(getNewEventId(), "KKursus i C# .NET", "Ingen beskrivelse", "Kl. 13.00", "DTU Ballerup"));
+            addEvent(new Event(getNewEventId(), "Kursus i C# .NET", "Ingen beskrivelse", "Kl. 13.00", "DTU Ballerup"));
         }
 
         public void addEvent(Event e) => events.Add(e);

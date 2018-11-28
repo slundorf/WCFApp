@@ -50,5 +50,11 @@ namespace GUIWPF
             AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
             this.NavigationService.Navigate(AddEvent);
         }
+
+        void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
+            this.NavigationService.Navigate(AddEvent);
+        }
     }
 }
