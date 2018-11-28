@@ -6,8 +6,8 @@ using ServiceReference1;
 
 namespace WebApplication2.Models
 {
-    public class EventListModel:List<EventModel>
+    public class EventListModel
     {
-        public List<EventModel> Events { get; set; }
+        public Event[] _Events { get; set; }
     }
 }
