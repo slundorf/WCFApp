@@ -42,7 +42,6 @@ namespace GUIWPF
                 MessageBoxResult result = MessageBox.Show("Kunne ikke oprette forbindelse til backend! URL: "+ client.Endpoint.Address, "Fejl", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Application.Current.Shutdown();
             }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
