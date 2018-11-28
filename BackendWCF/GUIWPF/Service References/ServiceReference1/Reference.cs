@@ -219,13 +219,10 @@ namespace GUIWPF.ServiceReference1 {
         System.Threading.Tasks.Task<GUIWPF.ServiceReference1.Event> GetEventAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllEvents", ReplyAction="http://tempuri.org/IService1/GetAllEventsResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GUIWPF.ServiceReference1.CompositeType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GUIWPF.ServiceReference1.Event))]
-        object[] GetAllEvents();
+        System.Collections.Generic.List<GUIWPF.ServiceReference1.Event> GetAllEvents();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllEvents", ReplyAction="http://tempuri.org/IService1/GetAllEventsResponse")]
-        System.Threading.Tasks.Task<object[]> GetAllEventsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<GUIWPF.ServiceReference1.Event>> GetAllEventsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllEventString", ReplyAction="http://tempuri.org/IService1/GetAllEventStringResponse")]
         string GetAllEventString();
@@ -321,11 +318,11 @@ namespace GUIWPF.ServiceReference1 {
             return base.Channel.GetEventAsync(id);
         }
         
-        public object[] GetAllEvents() {
+        public System.Collections.Generic.List<GUIWPF.ServiceReference1.Event> GetAllEvents() {
             return base.Channel.GetAllEvents();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetAllEventsAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<GUIWPF.ServiceReference1.Event>> GetAllEventsAsync() {
             return base.Channel.GetAllEventsAsync();
         }
         
