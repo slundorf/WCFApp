@@ -12,23 +12,22 @@ namespace WebApplication2.Controllers
     public class HomeController : Controller
     {
         public Event[] eventList;
+        public Service1Client client = new Service1Client();
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
+            eventList = await client.GetAllEventsAsync();
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
@@ -37,13 +36,11 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public async Task<IActionResult> EventAsync()
+        public async Task<IActionResult> Event()
         {
-            Service1Client client = new Service1Client();
 
-            await client.OpenAsync();
             eventList = await client.GetAllEventsAsync();
-
+            
             return View(eventList);
         }
 

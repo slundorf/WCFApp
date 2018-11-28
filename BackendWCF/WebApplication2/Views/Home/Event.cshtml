@@ -1,17 +1,27 @@
-﻿@model IEnumerable<WebApplication2.Models.EventListModel>
+﻿@model IEnumerable<ServiceReference1.Event>
 
 @{
     ViewData["Title"] = "Event";
 }
 
-<h2>Events</h2>
+<h2>ViewData["Title"]</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                Navn
+            </th>
+
+            <th>
+                Beskrivelse
+            </th>
+            <th>
+                Sted
+            </th>
+            <th>
+                Tidspunkt
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -19,9 +29,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.DisplayFor(modelItem => item.Navnk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beskrivelsek__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stedk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tidspunktk__BackingField)
             </td>
         </tr>
 }
