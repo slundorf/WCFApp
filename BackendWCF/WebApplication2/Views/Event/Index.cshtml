@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication2.Models.EventListModel>
+﻿@model IEnumerable<WebApplication2.Models.EventModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,12 +12,57 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Navn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beskrivelse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tidspunkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sted)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beskrivelse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tidspunkt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beskrivelsek__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navnk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stedk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tidspunktk__BackingField)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

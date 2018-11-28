@@ -11,10 +11,15 @@ namespace WebApplication2.Controllers
     public class EventController : Controller
     {
         EventListModel eventListModel = new EventListModel();
+        EventModel eventModel = new EventModel();
+   
         public IActionResult Index()
         {
-            List<Event> events = eventListModel.events.ToList();
-            return View(events);
+            List<EventModel> e = new List<EventModel>();
+
+            e = eventListModel.ToList();
+
+            return View(e);
         }
     }
 }
