@@ -39,8 +39,8 @@ namespace GUIWPF
             catch (System.ServiceModel.EndpointNotFoundException e)
             {
                 Console.WriteLine(e);
-                MessageBoxResult result = MessageBox.Show("Kunne ikke oprette forbindelse til backend!", "Fejl", MessageBoxButton.OK, MessageBoxImage.Warning);
-                System.Windows.Application.Current.Shutdown();
+                MessageBoxResult result = MessageBox.Show("Kunne ikke oprette forbindelse til backend! URL: "+ client.Endpoint.Address, "Fejl", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Application.Current.Shutdown();
             }
 
         }
