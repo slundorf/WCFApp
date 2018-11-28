@@ -16,20 +16,27 @@ using GUIWPF.ServiceReference1;
 
 namespace GUIWPF
 {
-    /// <summary>
-    /// Interaction logic for AddEvent.xaml
-    /// </summary>
-    public partial class AddEvent : Page
+
+    public partial class EventDetails : Page
     {
-        public AddEvent()
+        public EventDetails()
         {
             InitializeComponent();
         }
+
         // Custom constructor to pass expense report data
-        public AddEvent(object data):this()
+        public EventDetails(object data):this()
         {
             // Bind to expense report data.
             this.DataContext = data;
+        }
+
+        public void ButtonClick_Save(object sender, RoutedEventArgs e)
+        {
+        }
+
+        public void ButtonClick_Delete(object sender, RoutedEventArgs e)
+        {
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

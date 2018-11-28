@@ -46,15 +46,15 @@ namespace GUIWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // View Expense Report
-            AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
-            this.NavigationService.Navigate(AddEvent);
+            // Opret event knap
+            CreateEvent createEvent = new CreateEvent();
+            this.NavigationService.Navigate(createEvent);
         }
 
         void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
-            this.NavigationService.Navigate(AddEvent);
+            EventDetails eventDetails = new EventDetails(this.peopleListBox.SelectedItem);
+            this.NavigationService.Navigate(eventDetails);
         }
     }
 }
