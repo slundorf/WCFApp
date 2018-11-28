@@ -39,32 +39,32 @@
                 <Label Style="{StaticResource labelStyle}" Content="Navn:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,-0.333,0">
-                <TextBox Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Width="250"/>
+                <TextBox Name="navn_tb" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Width="250"/>
             </StackPanel>
             <!-- Tidspunkt -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
                 <Label Style="{StaticResource labelStyle}" Content="Tidspunkt:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
+                <TextBox Name="tidspunkt_tb" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
             </StackPanel>
             <!-- Sted -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" Margin="0,0,-0.333,0">
                 <Label Style="{StaticResource labelStyle}" Content="Sted:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
+                <TextBox Name="sted_tb" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
             </StackPanel>
             <!-- Beskrivelse -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" Margin="0,0,-0.333,0">
                 <Label Style="{StaticResource labelStyle}" Content="Beskrivelse:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-118"/>
+                <TextBox Name="beskrivelse_tb" AcceptsReturn="True" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-118"/>
             </StackPanel>
 
 
         </Grid>
-        <Button Content="Gem" Click="ButtonClick_Save" Grid.Column="1" HorizontalAlignment="Left" Margin="296.667,261.667,0,-115" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="24"/>
+        <Button Content="Gem event" Click="ButtonClick_Save" Grid.Column="1" HorizontalAlignment="Left" Margin="296.667,261.667,0,-115" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="24"/>
     </Grid>
 </Page>

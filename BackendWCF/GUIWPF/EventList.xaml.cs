@@ -22,7 +22,7 @@ namespace GUIWPF
     /// </summary>
     public partial class EventList : Page
     {
-        Service1Client client;
+        public static Service1Client client;
         static List<ServiceReference1.Event> events;
         
 

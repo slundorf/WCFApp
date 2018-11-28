@@ -26,6 +26,9 @@ namespace GUIWPF
         }
         public void ButtonClick_Save(object sender, RoutedEventArgs e)
         {
+            EventList.client.CreateEvent(navn_tb.Text, beskrivelse_tb.Text, tidspunkt_tb.Text, sted_tb.Text);
+            this.NavigationService.GoBack();
         }
+
     }
 }

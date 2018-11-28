@@ -29,21 +29,29 @@ namespace GUIWPF
         {
             // Bind to expense report data.
             this.DataContext = data;
+            
         }
 
         public void ButtonClick_Save(object sender, RoutedEventArgs e)
         {
+            object data = this.DataContext;
+            ServiceReference1.Event currentEvent = (ServiceReference1.Event)data;
+            EventList.client.UpdateEvent(currentEvent);
+            this.NavigationService.GoBack();
         }
 
         public void ButtonClick_Delete(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.Show("Er du sikker på at du vil slette dette event?", "Advarsel", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if(result == MessageBoxResult.OK)
+            {
+                object data = this.DataContext;
+                ServiceReference1.Event currentEvent = (ServiceReference1.Event)data;
+                EventList.client.DeleteEvent(currentEvent.Idk__BackingField);
+                EventList.client.DeleteEvent(currentEvent.Idk__BackingField);
+                this.NavigationService.GoBack();
+            }
         }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-       
         
     }
 }
