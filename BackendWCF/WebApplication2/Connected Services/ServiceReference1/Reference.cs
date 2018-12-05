@@ -63,7 +63,7 @@ namespace ServiceReference1
         
         private string Stedk__BackingFieldField;
         
-        private string Datok__BackingFieldField;
+        private System.DateTime Datok__BackingFieldField;
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Beskrivelse>k__BackingField", IsRequired=true)]
         public string Beskrivelsek__BackingField
@@ -118,7 +118,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Dato>k__BackingField", IsRequired=true)]
-        public string Datok__BackingField
+        public System.DateTime Datok__BackingField
         {
             get
             {
