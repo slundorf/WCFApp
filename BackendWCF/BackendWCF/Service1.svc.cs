@@ -27,11 +27,13 @@ namespace BackendWCF
             int id = db.getNewEventId();
             Event e = new Event(id, navn, beskrivelse, dato, sted);
             db.addEvent(e);
+            Console.WriteLine("Event oprettet: " + e.toString());
         }
 
         public void DeleteEvent(int id)
         {
             db.deleteEvent(db.getEvent(id));
+            Console.WriteLine("Event med id nummer "+id+" er slettet" );
         }
 
         public List<Event> GetAllEvents()
@@ -75,6 +77,7 @@ namespace BackendWCF
         public void UpdateEvent(Event e)
         {
             db.updateEvent(e);
+            Console.WriteLine("Event id " + e.Id + " er opdateret med følgende info: " + e.toString());
         }
 
     }
