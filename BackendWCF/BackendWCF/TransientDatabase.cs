@@ -18,12 +18,13 @@ namespace BackendWCF
         public TransientDatabase()
         {
             //Test data
-            addEvent(new Event(getNewEventId(), "Fodboldsturnering", "Vi mødes nede på boldbanerne og spiller.", "Kl. 14.00", "Boldbanerne i 2. kvadrant"));
-            addEvent(new Event(getNewEventId(), "Barcrawl", "Ingen beskrivelse", "Kl. 12.00", "Barene på DTU"));
-            addEvent(new Event(getNewEventId(), "Paintball", "Vi mødes inde i byen og spiller.", "Kl. 17.00", "København"));
-            addEvent(new Event(getNewEventId(), "Bordfodboldsturnering", "Ingen beskrivelse", "Kl. 11.00", "S-huset i Lyngby"));
-            addEvent(new Event(getNewEventId(), "Ølsmagning", "Jaaaaa øller", "Kl. 19.00", "København"));
-            addEvent(new Event(getNewEventId(), "Kursus i C# .NET", "Ingen beskrivelse", "Kl. 13.00", "DTU Ballerup"));
+            DateTime testDate = new DateTime(2018, 10, 15, 8, 30, 00);
+            addEvent(new Event(getNewEventId(), "Fodboldsturnering", "Vi mødes nede på boldbanerne og spiller.", testDate, "Boldbanerne i 2. kvadrant"));
+            addEvent(new Event(getNewEventId(), "Barcrawl", "Ingen beskrivelse", testDate, "Barene på DTU"));
+            addEvent(new Event(getNewEventId(), "Paintball", "Vi mødes inde i byen og spiller.", testDate, "København"));
+            addEvent(new Event(getNewEventId(), "Bordfodboldsturnering", "Ingen beskrivelse", testDate, "S-huset i Lyngby"));
+            addEvent(new Event(getNewEventId(), "Ølsmagning", "Jaaaaa øller", testDate, "København"));
+            addEvent(new Event(getNewEventId(), "Kursus i C# .NET", "Ingen beskrivelse", testDate, "DTU Ballerup"));
         }
 
         public void addEvent(Event e) => events.Add(e);

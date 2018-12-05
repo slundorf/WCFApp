@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUIWPF"
         mc:Ignorable="d"
-        Title="Mainmenu" Height="500" Width="350" Source="EventList.xaml">
+        Title="Mainmenu" Height="550" Width="750" Source="EventList.xaml">
 
 </NavigationWindow>

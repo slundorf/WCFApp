@@ -13,6 +13,7 @@ namespace BackendWCF.Tests
     public class Service1Tests
     {
         static TransientDatabase db = new TransientDatabase();
+        DateTime testDate = new DateTime(2018, 10, 15, 8, 30, 00);
 
         [TestMethod()]
         public void CreateEventTest()
@@ -20,7 +21,8 @@ namespace BackendWCF.Tests
             db.deleteAllEvents();
 
             int id = db.getNewEventId();
-            Event e = new Event(id, "Testperson Testington d. 1", "Dette event er en test", "22:00", "Testville");
+            
+            Event e = new Event(id, "Testperson Testington d. 1", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
             //     ArrayList events = db.getAllEvents();
 
@@ -42,7 +44,7 @@ namespace BackendWCF.Tests
             db.deleteAllEvents();
 
             int id = db.getNewEventId();
-            Event e = new Event(id, "Testperson Testington d. 2", "Dette event er en test", "22:00", "Testville");
+            Event e = new Event(id, "Testperson Testington d. 2", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
 
             db.deleteEvent(db.getEvent(id));
@@ -57,12 +59,12 @@ namespace BackendWCF.Tests
             List<Event> testarray = new List<Event>();
 
             int id = db.getNewEventId();
-            Event e = new Event(id, "Testperson Testington d. 3", "Dette event er en test", "22:00", "Testville");
+            Event e = new Event(id, "Testperson Testington d. 3", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
             testarray.Add(e);
 
             id = db.getNewEventId();
-            e = new Event(id, "Testperson Testington d. 4", "Dette event er en test", "22:00", "Testville");
+            e = new Event(id, "Testperson Testington d. 4", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
             testarray.Add(e);
 
@@ -75,7 +77,7 @@ namespace BackendWCF.Tests
             db.deleteAllEvents();
 
             int id = db.getNewEventId();
-            Event e = new Event(id, "Testperson Testington d. 5", "Dette event er en test", "22:00", "Testville");
+            Event e = new Event(id, "Testperson Testington d. 5", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
 
             Assert.AreSame(e, db.getEvent(id));
@@ -94,10 +96,10 @@ namespace BackendWCF.Tests
             db.deleteAllEvents();
 
             int id = db.getNewEventId();
-            Event e = new Event(id, "Testperson Testington d. 6", "Dette event er en test", "22:00", "Testville");
+            Event e = new Event(id, "Testperson Testington d. 6", "Dette event er en test", testDate, "Testville");
             db.addEvent(e);
 
-            e = new Event(id, "Testperson Testington d. 7", "Dette event er en test", "22:00", "Testville");
+            e = new Event(id, "Testperson Testington d. 7", "Dette event er en test", testDate, "Testville");
 
             db.updateEvent(e);
 

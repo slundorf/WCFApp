@@ -12,31 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GUIWPF.ServiceReference1;
 
 namespace GUIWPF
 {
     /// <summary>
-    /// Interaction logic for AddEvent.xaml
+    /// Interaction logic for CreateEvent.xaml
     /// </summary>
-    public partial class AddEvent : Page
+    public partial class CreateEvent : Page
     {
-        public AddEvent()
+        public CreateEvent()
         {
             InitializeComponent();
         }
-        // Custom constructor to pass expense report data
-        public AddEvent(object data):this()
-{
-            // Bind to expense report data.
-            this.DataContext = data;
+        public void ButtonClick_Save(object sender, RoutedEventArgs e)
+        {
+            EventList.client.CreateEvent(navn_tb.Text, beskrivelse_tb.Text, dato_datepicker.SelectedDate ?? DateTime.Now, sted_tb.Text);
+            this.NavigationService.GoBack();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-       
-        
     }
 }

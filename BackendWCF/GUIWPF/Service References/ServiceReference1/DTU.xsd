@@ -34,7 +34,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="navn" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="beskrivelse" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="tidspunkt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dato" type="xs:dateTime" />
         <xs:element minOccurs="0" name="sted" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

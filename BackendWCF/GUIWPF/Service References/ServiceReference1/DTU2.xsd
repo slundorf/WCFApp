@@ -10,10 +10,10 @@
   <xs:complexType name="Event">
     <xs:sequence>
       <xs:element name="_x003C_Beskrivelse_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Dato_x003E_k__BackingField" type="xs:dateTime" />
       <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_Navn_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_Sted_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_Tidspunkt_x003E_k__BackingField" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Event" nillable="true" type="tns:Event" />

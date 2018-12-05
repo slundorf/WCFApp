@@ -21,11 +21,11 @@ namespace BackendWCF
             throw new NotImplementedException();
         }
 
-        public void CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted)
+        public void CreateEvent(string navn, string beskrivelse, DateTime dato, string sted)
         {
             //generate et random unikt id
             int id = db.getNewEventId();
-            Event e = new Event(id, navn, beskrivelse, tidspunkt, sted);
+            Event e = new Event(id, navn, beskrivelse, dato, sted);
             db.addEvent(e);
         }
 

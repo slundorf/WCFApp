@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,34 +22,39 @@ namespace GUIWPF
     /// </summary>
     public partial class EventList : Page
     {
-        Service1Client client;
+        public static Service1Client client;
         static List<ServiceReference1.Event> events;
         
 
         public EventList()
         {
             InitializeComponent();
-            client = new Service1Client();
-            
-            events = new List<ServiceReference1.Event>(); //lokal liste
-            events = client.GetAllEvents();
-            peopleListBox.ItemsSource = events;
-            getData();
-
+            try
+            {
+                client = new Service1Client();
+                events = new List<ServiceReference1.Event>(); //lokal liste
+                events = client.GetAllEvents();
+                peopleListBox.ItemsSource = events;
+            }
+            catch (System.ServiceModel.EndpointNotFoundException e)
+            {
+                Console.WriteLine(e);
+                MessageBoxResult result = MessageBox.Show("Kunne ikke oprette forbindelse til backend! URL: "+ client.Endpoint.Address, "Fejl", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Application.Current.Shutdown();
+            }
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // View Expense Report
-            AddEvent AddEvent = new AddEvent(this.peopleListBox.SelectedItem);
-            this.NavigationService.Navigate(AddEvent);
+            // Opret event knap
+            CreateEvent createEvent = new CreateEvent();
+            this.NavigationService.Navigate(createEvent);
         }
 
-        private void getData()
+        void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //TEST DATA
-            //events.Add(new Event(1, "Event1", "Beskrivelse1", "12:23", "DTU"));
-            //events.Add(new Event(2, "Event2", "Beskrivelse1", "12:23", "DTU"));
-
+            EventDetails eventDetails = new EventDetails(this.peopleListBox.SelectedItem);
+            this.NavigationService.Navigate(eventDetails);
         }
     }
 }
