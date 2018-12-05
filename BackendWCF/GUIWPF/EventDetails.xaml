@@ -29,9 +29,9 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <!-- Navn -->
@@ -39,31 +39,29 @@
                 <Label Style="{StaticResource labelStyle}" Content="Navn:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,-0.333,0">
-                <TextBox x:Name="Navn" Text="{Binding Navnk__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Width="250"/>
-            </StackPanel>
-            <!-- Tidspunkt -->
-            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <Label Style="{StaticResource labelStyle}" Content="Tidspunkt:"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox x:Name="Tidspunkt" Text="{Binding Tidspunktk__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
+                <TextBox x:Name="Navn" Text="{Binding Navnk__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Width="250" FontSize="18"/>
             </StackPanel>
             <!-- Sted -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" Margin="0,0,-0.333,0">
                 <Label Style="{StaticResource labelStyle}" Content="Sted:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox x:Name="Sted" Text="{Binding Stedk__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333"/>
+                <TextBox x:Name="Sted" Text="{Binding Stedk__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-0.333" FontSize="18"/>
+            </StackPanel>
+            <!-- Tidspunkt -->
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
+                <Label Style="{StaticResource labelStyle}" Content="Dato:"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="0,0,-0.333,0">
+                <DatePicker Grid.Column="1" SelectedDate="{Binding Datok__BackingField}" HorizontalAlignment="Left" Margin="0,0,0,0" Width="250" Height="32" Grid.Row="1" VerticalAlignment="Top" FirstDayOfWeek="Monday" SelectedDateFormat="Long" RenderTransformOrigin="0.5,1.059" FontSize="18"/>
             </StackPanel>
             <!-- Beskrivelse -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" Margin="0,0,-0.333,0">
                 <Label Style="{StaticResource labelStyle}" Content="Beskrivelse:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Margin="0,0,-0.333,0">
-                <TextBox x:Name="Beskrivelse" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Beskrivelsek__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-118"/>
+                <TextBox x:Name="Beskrivelse" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Beskrivelsek__BackingField}" Grid.Row="1" Grid.ColumnSpan="1" Width="250" Margin="0,0,0,-118" FontSize="14"/>
             </StackPanel>
-
-
         </Grid>
         <Button Content="Gem ændringer" Click="ButtonClick_Save" Grid.Column="1" HorizontalAlignment="Left" Margin="296.667,261.667,0,-115" Grid.Row="1" VerticalAlignment="Top" Width="105" Height="24"/>
         <Button Content="Slet event" Click="ButtonClick_Delete" HorizontalAlignment="Left" Margin="25,116,0,0" VerticalAlignment="Top" Width="105" Height="25" Grid.ColumnSpan="2"/>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GUIWPF
+namespace BackendWCF
 {
     [Serializable()]
     public class Event
@@ -12,18 +12,18 @@ namespace GUIWPF
         public int Id { get; set; }
         public String Navn { get; set; }
         public String Beskrivelse { get; set; }
-        public String Tidspunkt { get; set; }
+        public DateTime Dato { get; set; }
         public String Sted { get; set; }
 
-        public Event(int id, String navn, String beskrivelse, String tidspunkt, String sted)
+        public Event(int id, String navn, String beskrivelse, DateTime dato, String sted)
         {
             Id = id;
             Navn = navn;
             Beskrivelse = beskrivelse;
-            Tidspunkt = tidspunkt;
+            Dato = dato;
             Sted = sted;
         }
 
-        public String toString() => "[" + Id + "," + Navn + "," + Beskrivelse + "," + Tidspunkt + "," + Sted + "]";
+        public String toString() => "[" + Id + "," + Navn + "," + Beskrivelse + "," + Dato.ToLongDateString() + "," + Sted + "]";
     }
 }

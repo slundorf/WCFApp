@@ -85,13 +85,13 @@ namespace GUIWPF.ServiceReference1 {
         
         private string Beskrivelsek__BackingFieldField;
         
+        private System.DateTime Datok__BackingFieldField;
+        
         private int Idk__BackingFieldField;
         
         private string Navnk__BackingFieldField;
         
         private string Stedk__BackingFieldField;
-        
-        private string Tidspunktk__BackingFieldField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -112,6 +112,19 @@ namespace GUIWPF.ServiceReference1 {
                 if ((object.ReferenceEquals(this.Beskrivelsek__BackingFieldField, value) != true)) {
                     this.Beskrivelsek__BackingFieldField = value;
                     this.RaisePropertyChanged("Beskrivelsek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Dato>k__BackingField", IsRequired=true)]
+        public System.DateTime Datok__BackingField {
+            get {
+                return this.Datok__BackingFieldField;
+            }
+            set {
+                if ((this.Datok__BackingFieldField.Equals(value) != true)) {
+                    this.Datok__BackingFieldField = value;
+                    this.RaisePropertyChanged("Datok__BackingField");
                 }
             }
         }
@@ -155,19 +168,6 @@ namespace GUIWPF.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Tidspunkt>k__BackingField", IsRequired=true)]
-        public string Tidspunktk__BackingField {
-            get {
-                return this.Tidspunktk__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Tidspunktk__BackingFieldField, value) != true)) {
-                    this.Tidspunktk__BackingFieldField = value;
-                    this.RaisePropertyChanged("Tidspunktk__BackingField");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -195,10 +195,10 @@ namespace GUIWPF.ServiceReference1 {
         System.Threading.Tasks.Task<GUIWPF.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(GUIWPF.ServiceReference1.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEvent", ReplyAction="http://tempuri.org/IService1/CreateEventResponse")]
-        void CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted);
+        void CreateEvent(string navn, string beskrivelse, System.DateTime dato, string sted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEvent", ReplyAction="http://tempuri.org/IService1/CreateEventResponse")]
-        System.Threading.Tasks.Task CreateEventAsync(string navn, string beskrivelse, string tidspunkt, string sted);
+        System.Threading.Tasks.Task CreateEventAsync(string navn, string beskrivelse, System.DateTime dato, string sted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEvent", ReplyAction="http://tempuri.org/IService1/UpdateEventResponse")]
         void UpdateEvent(GUIWPF.ServiceReference1.Event e);
@@ -286,12 +286,12 @@ namespace GUIWPF.ServiceReference1 {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public void CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted) {
-            base.Channel.CreateEvent(navn, beskrivelse, tidspunkt, sted);
+        public void CreateEvent(string navn, string beskrivelse, System.DateTime dato, string sted) {
+            base.Channel.CreateEvent(navn, beskrivelse, dato, sted);
         }
         
-        public System.Threading.Tasks.Task CreateEventAsync(string navn, string beskrivelse, string tidspunkt, string sted) {
-            return base.Channel.CreateEventAsync(navn, beskrivelse, tidspunkt, sted);
+        public System.Threading.Tasks.Task CreateEventAsync(string navn, string beskrivelse, System.DateTime dato, string sted) {
+            return base.Channel.CreateEventAsync(navn, beskrivelse, dato, sted);
         }
         
         public void UpdateEvent(GUIWPF.ServiceReference1.Event e) {
