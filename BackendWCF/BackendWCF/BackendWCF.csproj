@@ -103,7 +103,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50722</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50722/</IISUrl>
+          <IISUrl>http://localhost:8584/DTU</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
           <IISAppRootUrl>http://localhost:8584/DTU</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
