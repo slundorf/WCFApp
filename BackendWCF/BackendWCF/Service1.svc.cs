@@ -15,12 +15,6 @@ namespace BackendWCF
     {
         static TransientDatabase db = new TransientDatabase();
 
-        public void CancelForEvent()
-        {
-            //Afmelder en bruger fra et event
-            throw new NotImplementedException();
-        }
-
         public void CreateEvent(string navn, string beskrivelse, DateTime dato, string sted)
         {
             //generate et random unikt id
@@ -44,24 +38,6 @@ namespace BackendWCF
         public String GetAllEventString()
         {
             return db.getAllEventsString();
-        }
-
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
         }
 
         public Event GetEvent(int id)

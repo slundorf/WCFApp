@@ -21,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8584/DTU" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8584/DTU/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DTU.xsd" MetadataType="Schema" ID="623e8ca0-8c50-49b8-b32c-00af980099fd" SourceId="1" SourceUrl="http://localhost:8584/DTU?xsd=xsd0" />
-    <MetadataFile FileName="DTU1.xsd" MetadataType="Schema" ID="88aadc5e-9b8f-4e14-bcc9-c0d095c46054" SourceId="1" SourceUrl="http://localhost:8584/DTU?xsd=xsd1" />
-    <MetadataFile FileName="DTU2.xsd" MetadataType="Schema" ID="954b5a1a-c9a9-4f5d-853d-51effe603899" SourceId="1" SourceUrl="http://localhost:8584/DTU?xsd=xsd2" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="553aa371-d278-4216-a037-17f7f588b542" SourceId="1" SourceUrl="http://localhost:8584/DTU?wsdl" />
-    <MetadataFile FileName="DTU.disco" MetadataType="Disco" ID="bb05f29f-a581-41ca-b063-328c24552387" SourceId="1" SourceUrl="http://localhost:8584/DTU?disco" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="1fe56814-85cf-4a63-98a6-9a76d714d7df" SourceId="1" SourceUrl="http://localhost:8584/DTU/Service1.svc?disco" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="1dceb7fe-962b-49ae-b023-fdf53810961f" SourceId="1" SourceUrl="http://localhost:8584/DTU/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="501ba3ec-7845-4172-94c3-c28561914211" SourceId="1" SourceUrl="http://localhost:8584/DTU/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="59beda1f-2c1d-4356-bf10-d90c7dc153e7" SourceId="1" SourceUrl="http://localhost:8584/DTU/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="f44e68ae-8606-454c-8ca8-2e3785dd860a" SourceId="1" SourceUrl="http://localhost:8584/DTU/Service1.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

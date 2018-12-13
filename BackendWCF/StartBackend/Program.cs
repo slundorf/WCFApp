@@ -29,7 +29,7 @@ namespace StartBackend
                 selfHost.Open();
                 Console.WriteLine("-- WCF Backend til event management kører nu!! --");
                 Console.WriteLine("62413 - Advanceret objektorienteteret programmering med C# og .NET");
-                Console.WriteLine("Sofie, Simon og Christoffer - F18");
+                Console.WriteLine("Sofie, Simon og Christoffer - E18");
                 Console.WriteLine("");
                 Console.WriteLine("Web service er nu opstartet på url: " + baseAddress);
                 Console.WriteLine("");

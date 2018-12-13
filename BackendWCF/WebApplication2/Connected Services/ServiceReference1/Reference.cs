@@ -295,7 +295,7 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:50722/Service1.svc");
+                return new System.ServiceModel.EndpointAddress("http://localhost:8584/DTU/Service1.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

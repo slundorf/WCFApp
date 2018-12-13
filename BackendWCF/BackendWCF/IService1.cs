@@ -14,12 +14,6 @@ namespace BackendWCF
     public interface IService1
     {
 
-        [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
         // Vores metoder som skal kunne kaldes fra en client
         [OperationContract]
         void CreateEvent(String navn, String beskrivelse, DateTime dato, String sted);
@@ -41,9 +35,6 @@ namespace BackendWCF
 
         [OperationContract]
         void SignupForEvent();
-
-        [OperationContract]
-        void CancelForEvent();
 
     }
 

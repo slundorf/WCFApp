@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BackendWCF.Event">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAAAAAABgAAAAAAAAACBAAAAAAAAAA=</HashCode>
+      <FileName>Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackendWCF.Service1" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAYAAACAAAAAAACAAAAAAAAAIAAAAAADAA=</HashCode>
+      <FileName>Service1.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.128" Collapsed="true" />
+  </Class>
+  <Class Name="BackendWCF.TransientDatabase">
+    <Position X="5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAgAAEQAAAAAQAAAAQAAAAIAAAAAAEgCAAA=</HashCode>
+      <FileName>TransientDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackendWCF.CompositeType" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAQAAA=</HashCode>
+      <FileName>IService1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BackendWCF.IService1" Collapsed="true">
+    <Position X="7" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAIAAACAAAAAAACAAAAAAAAAIAAAAAADAA=</HashCode>
+      <FileName>IService1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
