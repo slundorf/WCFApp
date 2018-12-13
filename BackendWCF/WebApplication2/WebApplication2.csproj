@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Event Web Application</RootNamespace>
+    <AssemblyName>Event Web Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
