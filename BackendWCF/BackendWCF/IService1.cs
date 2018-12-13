@@ -14,7 +14,7 @@ namespace BackendWCF
     {
         // Vores metoder som skal kunne kaldes fra en client
         [OperationContract]
-        void CreateEvent(String navn, String beskrivelse, String tidspunkt, String sted);
+        void CreateEvent(String navn, String beskrivelse, DateTime dato, String sted);
 
         [OperationContract]
         void UpdateEvent(Event e);
@@ -33,9 +33,6 @@ namespace BackendWCF
 
         [OperationContract]
         void SignupForEvent();
-
-        [OperationContract]
-        void CancelForEvent();
 
     }
 

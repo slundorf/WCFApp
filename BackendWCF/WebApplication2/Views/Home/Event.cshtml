@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ServiceReference1.Event>
+
+@{
+    ViewData["Title"] = "Event";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Navn
+            </th>
+
+            <th>
+                Beskrivelse
+            </th>
+            <th>
+                Sted
+            </th>
+            <th>
+                Tidspunkt
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navnk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beskrivelsek__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stedk__BackingField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datok__BackingField)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

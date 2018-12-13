@@ -15,23 +15,19 @@ namespace BackendWCF
     {
         static TransientDatabase db = new TransientDatabase();
 
-        public void CancelForEvent()
-        {
-            //Afmelder en bruger fra et event
-            throw new NotImplementedException();
-        }
-
-        public void CreateEvent(string navn, string beskrivelse, string tidspunkt, string sted)
+        public void CreateEvent(string navn, string beskrivelse, DateTime dato, string sted)
         {
             //generate et random unikt id
             int id = db.getNewEventId();
-            Event e = new Event(id, navn, beskrivelse, tidspunkt, sted);
+            Event e = new Event(id, navn, beskrivelse, dato, sted);
             db.addEvent(e);
+            Console.WriteLine("Event oprettet: " + e.toString());
         }
 
         public void DeleteEvent(int id)
         {
             db.deleteEvent(db.getEvent(id));
+            Console.WriteLine("Event med id nummer "+id+" er slettet" );
         }
 
         public List<Event> GetAllEvents()
@@ -42,24 +38,6 @@ namespace BackendWCF
         public String GetAllEventString()
         {
             return db.getAllEventsString();
-        }
-
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
         }
 
         public Event GetEvent(int id)
@@ -75,6 +53,7 @@ namespace BackendWCF
         public void UpdateEvent(Event e)
         {
             db.updateEvent(e);
+            Console.WriteLine("Event id " + e.Id + " er opdateret med følgende info: " + e.toString());
         }
 
     }

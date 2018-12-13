@@ -8,12 +8,24 @@ namespace BackendWCF
 {
     //En simpel form for database, hvor data ikke er konsistent!
     //Ville i den rigtige verden skulle udskiftes med en SQL database.
-
+  
     public class TransientDatabase
     {
         //Arraylist med alt vores midlertidig data.
         private List<Event> events = new List<Event>();
         int unikid = 0;
+
+        public TransientDatabase()
+        {
+            //Test data
+            DateTime testDate = new DateTime(2018, 10, 15, 8, 30, 00);
+            addEvent(new Event(getNewEventId(), "Fodboldsturnering", "Vi mødes nede på boldbanerne og spiller.", testDate, "Boldbanerne i 2. kvadrant"));
+            addEvent(new Event(getNewEventId(), "Barcrawl", "Ingen beskrivelse", testDate, "Barene på DTU"));
+            addEvent(new Event(getNewEventId(), "Paintball", "Vi mødes inde i byen og spiller.", testDate, "København"));
+            addEvent(new Event(getNewEventId(), "Bordfodboldsturnering", "Ingen beskrivelse", testDate, "S-huset i Lyngby"));
+            addEvent(new Event(getNewEventId(), "Ølsmagning", "Jaaaaa øller", testDate, "København"));
+            addEvent(new Event(getNewEventId(), "Kursus i C# .NET", "Ingen beskrivelse", testDate, "DTU Ballerup"));
+        }
 
         public void addEvent(Event e) => events.Add(e);
         public void deleteEvent(Event e) => events.Remove(e);
