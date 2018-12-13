@@ -9,11 +9,9 @@ using System.Text;
 
 namespace BackendWCF
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
     {
-
         // Vores metoder som skal kunne kaldes fra en client
         [OperationContract]
         void CreateEvent(String navn, String beskrivelse, DateTime dato, String sted);
